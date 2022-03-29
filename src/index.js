@@ -1,12 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Counter from "./components/counter";
+import {Col, Row, Container} from "react-bootstrap";
+import NavMenu from "./components/navMenu";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import App from "./App";
+
+let welcomeMsj = {
+    message: "Welcome to React Tutorial",
+    userName: "Luis"
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <NavMenu welcomeMsj={welcomeMsj}/>
+      <Container>
+          <BrowserRouter>
+              <Routes>
+                  <Route path="counter" element={<Counter/>}/>
+                  <Route path="pokedex" element={<App/>}/>
+              </Routes>
+          </BrowserRouter>
+      </Container>
   </React.StrictMode>,
   document.getElementById('root')
 );
