@@ -4,10 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Counter from "./components/counter";
-import {Col, Row, Container} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import NavMenu from "./components/navMenu";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import App from "./App";
+import Pokedex from "./components/pokedex";
 
 let welcomeMsj = {
     message: "Welcome to React Tutorial",
@@ -21,7 +21,7 @@ ReactDOM.render(
           <BrowserRouter>
               <Routes>
                   <Route path="counter" element={<Counter/>}/>
-                  <Route path="pokedex" element={<App/>}/>
+                  <Route path="pokedex" element={<Pokedex/>}/>
               </Routes>
           </BrowserRouter>
       </Container>
